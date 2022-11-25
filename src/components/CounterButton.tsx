@@ -8,6 +8,7 @@ const CounterButton = () => {
     <button
       onClick={clickCount}
       style={{
+        display: "box",
         width: "100px",
         backgroundColor: "blueviolet",
         color: "#fff",
