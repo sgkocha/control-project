@@ -1,41 +1,25 @@
 import React from "react";
-import { CurrenciesRate } from "./Currency";
-import productsArray from "./ProductsArray";
+
 
 type ProductProps = {
-  productId: number;
-  currency: number;
+  currency: number
+  image: string
+  name: string
+  price: number
+  currencySymbol: string
 };
 
-const ProductListItem = ({ productId, currency }: ProductProps) => {
-  const convertPrice = () => {
-    return Math.floor(
-      productsArray[productId - 1].price * CurrenciesRate[currency - 1]
-    );
-  };
-
-  const currencySymbol = () => {
-    switch (currency) {
-      case 1:
-        return "$";
-      case 2:
-        return "€";
-      case 3:
-        return "₴";
-
-      case 4:
-        return "zł";
-    }
-  };
+const ProductListItem = ({currency, image, name, price, currencySymbol }: ProductProps) => {
+ 
 
   return (
     <div className="product">
       <div className="product-image">
-        <img src={productsArray[productId - 1].image} alt="iPhone" />
+        <img src={image} alt="iPhone" />
       </div>
-      <div className="product-name">{productsArray[productId - 1].name}</div>
+      <div className="product-name">{name}</div>
       <div className="product-price">
-        {convertPrice()} <span> {currencySymbol()}</span>
+        {price} <span> {currencySymbol}</span>
       </div>
     </div>
   );
