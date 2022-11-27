@@ -4,29 +4,45 @@ import ProductList from "../components/Product/ProductList";
 import "./TaskSecond.css";
 
 const TaskSecond = () => {
-  const [currency, setCurrency] = React.useState<number>(1);
+  const [currency, setCurrency] = React.useState<number>(1)
 
   const changeCurrency = (newCurrency: number) => {
-    setCurrency(newCurrency);
-  };
+    setCurrency(newCurrency)
+  }
+
   return (
     <>
       <div className="title">Task 2. Products List</div>
       <div className="currency-btns">
         <button
           onClick={() => changeCurrency(Currencies.DOLLAR)}
-          className={currency === Currencies.DOLLAR ? "btn-active" : ""}
+          disabled={currency === Currencies.DOLLAR ? true : false}
         >
           USD
         </button>
-        <button onClick={() => changeCurrency(Currencies.EURO)}>EUR</button>
-        <button onClick={() => changeCurrency(Currencies.UAH)}>UAH</button>
-        <button onClick={() => changeCurrency(Currencies.PLN)}>PLN</button>
+        <button
+          onClick={() => changeCurrency(Currencies.EURO)}
+          disabled={currency === Currencies.EURO ? true : false}
+        >
+          EUR
+        </button>
+        <button
+          onClick={() => changeCurrency(Currencies.UAH)}
+          disabled={currency === Currencies.UAH ? true : false}
+        >
+          UAH
+        </button>
+        <button
+          onClick={() => changeCurrency(Currencies.PLN)}
+          disabled={currency === Currencies.PLN ? true : false}
+        >
+          PLN
+        </button>
       </div>
 
       <ProductList currency={currency} />
     </>
-  );
-};
+  )
+}
 
 export default TaskSecond;

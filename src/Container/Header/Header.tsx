@@ -3,8 +3,10 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-
-  let activeClassName = "underline";
+  let activeStyle = {
+    textDecoration: "underline",
+  };
+  
   return (
     <header className="header">
       <div className="wrapper flexbox">
@@ -14,13 +16,28 @@ const Header = () => {
         <nav>
           <ul className="nav flexbox">
             <li className="nav-item">
-              <NavLink to="/">Task 1 </NavLink>
+              <NavLink
+                to="/"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              >
+                Task 1
+              </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/task2">Task 2 </NavLink>
+              <NavLink
+                to="/task2"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              >
+                Task 2
+              </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/about">About </NavLink>
+              <NavLink
+                to="/about"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              >
+                About
+              </NavLink>
             </li>
           </ul>
         </nav>

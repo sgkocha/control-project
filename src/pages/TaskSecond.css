@@ -2,11 +2,7 @@
     display: flex;
    justify-content: flex-end;
 }
- .btn-active{
-    background-color: orange;
-    border: 1px solid orange;
-    color: #fff;
-}
+
 
 .currency-btns button {
     margin-right: 10px;
